@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import TextInput from './TextInput';
+import React, { useState } from "react";
+import styled from "styled-components";
+import TextInput from "./TextInput";
 import Button from "./Button";
+
 const Card = styled.div`
   flex: 1;
   min-width: 280px;
@@ -25,12 +26,12 @@ const Title = styled.div`
   }
 `;
 
-const AddWorkout = ({workout, setWorkout}) => {
+const AddWorkout = ({ workout, setWorkout, addNewWorkout, buttonLoading }) => {
   return (
     <Card>
       <Title>Add New Workout</Title>
       <TextInput
-              label="Workout"
+        label="Workout"
         textArea
         rows={10}
         placeholder={`Enter in this format:
@@ -41,15 +42,18 @@ const AddWorkout = ({workout, setWorkout}) => {
 -Reps
 -Weight
 -Duration`}
-       value={workout}
+        value={workout}
         handelChange={(e) => setWorkout(e.target.value)}
-        />
-         <Button
+      />
+      <Button
         text="Add Workout"
         small
+        onClick={() => addNewWorkout()}
+        isLoading={buttonLoading}
+        isDisabled={buttonLoading}
       />
     </Card>
-  )
-}
+  );
+};
 
 export default AddWorkout;
