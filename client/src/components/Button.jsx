@@ -2,7 +2,7 @@ import { CircularProgress } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
-const ButtonComponent = styled.div`
+const Button = styled.div`
   border-radius: 10px;
   color: white;
   font-size: 14px;
@@ -104,4 +104,4 @@ const button = ({
   );
 };
 
-export default ButtonComponent;
+export default button;
