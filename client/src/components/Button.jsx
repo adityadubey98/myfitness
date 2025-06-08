@@ -104,4 +104,4 @@ const button = ({
   );
 };
 
-export default button;
+export default Button;
